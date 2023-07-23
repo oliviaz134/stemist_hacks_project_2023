@@ -46,8 +46,10 @@ impl EventHandler for Handler {
                 }
             };
 
-            let ids: Arc<Mutex<[String; 4]>> = Arc::new(Mutex::new(content.clone().1.unwrap()));
-            let choices: Arc<Mutex<[String; 4]>> = Arc::new(Mutex::new(content.clone().2.unwrap()));
+            let ids: Arc<Mutex<[String; 4]>> =
+                Arc::new(Mutex::new(content.clone().1.unwrap_or_default()));
+            let choices: Arc<Mutex<[String; 4]>> =
+                Arc::new(Mutex::new(content.clone().2.unwrap_or_default()));
 
             if let Err(why) = command
                 .create_interaction_response(&ctx.http, |response| {
@@ -56,7 +58,7 @@ impl EventHandler for Handler {
                         .interaction_response_data(|message| {
                             message.add_embed(content.0);
 
-                            if content.1 == None || content.2 == None {
+                            if content.1 == Default::default() || content.2 == Default::default() {
                                 return message;
                             }
 
