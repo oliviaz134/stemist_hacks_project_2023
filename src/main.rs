@@ -6,13 +6,14 @@ use serenity::{
     async_trait,
 	prelude::*,
 	model::{
-        application::command::Command,
         application::interaction::{Interaction, InteractionResponseType},
 		gateway::Ready
     }
 };
 
 pub mod commands;
+pub mod models;
+pub mod schema;
 
 struct Handler;
 
