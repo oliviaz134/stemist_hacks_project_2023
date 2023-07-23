@@ -2,34 +2,40 @@ use serenity::builder::CreateApplicationCommand;
 use serenity::builder::CreateEmbed;
 use serenity::model::prelude::*;
 
-use super::super::super::json_structs::*;
+use super::super::pq;
 
-pub fn ask_question(
+pub fn leaderboard(
     _command_interaction: &mut interaction::application_command::ApplicationCommandInteraction,
 ) -> (CreateEmbed, Option<[String; 4]>, Option<[String; 4]>) {
-    let question = parse::generate_question();
+    let mut conn = pq::connect::establish_connection();
+    let mut users = pq::interface::get_all_users(&mut conn).unwrap_or_default();
+
+    users.sort_by(|a, b| a.points.cmp(&b.points));
+
+    let mut rank = String::new();
+    let mut username = String::new();
+    let mut points = String::new();
+
+    for (i, user) in users.iter().rev().enumerate() {
+        if i == 10 {
+            break;
+        }
+
+        rank.push_str(&format!("{}\n", i + 1));
+        username.push_str(&format!("{}\n", user.username));
+        points.push_str(&format!("{}\n", user.points));
+    }
 
     let mut embed = CreateEmbed::default();
     embed
-        .title("Question")
-        .description(question.question)
+        .title("Leaderboard")
+        .description("The top 10 individuals on the leaderboard")
         .color(0xff040)
-        .field("id", format!("{}", question.id), false);
+        .field("rank", rank, true)
+        .field("username", username, true)
+        .field("points", points, true);
 
-    let mut id: [String; 4] = Default::default();
-    let mut choices: [String; 4] = Default::default();
-
-    choices[0] = question.options.A;
-    choices[1] = question.options.B;
-    choices[2] = question.options.C;
-    choices[3] = question.options.D;
-
-    id[0] = "A".to_string();
-    id[1] = "B".to_string();
-    id[2] = "C".to_string();
-    id[3] = "D".to_string();
-
-    return (embed, Some(id), Some(choices));
+    return (embed, None, None);
 }
 
 pub fn register(command: &mut CreateApplicationCommand) -> &mut CreateApplicationCommand {

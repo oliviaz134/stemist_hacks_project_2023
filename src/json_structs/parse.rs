@@ -25,8 +25,15 @@ pub fn generate_question() -> Question {
         _rdrand32_step(&mut random);
     }
 
+    let rand_num = (random % (JSON_DATA.lock().unwrap().questions.len() + 1) as u32) as i64;
+
     for question in &JSON_DATA.lock().unwrap().questions {
-        if question.id == (random % 61) as i64 {
+
+        println!("question id: {}", question.id);
+        println!("random question id: {} ", rand_num);
+
+        if question.id == rand_num {
+            println!("question found");
             return question.clone();
         }
     }

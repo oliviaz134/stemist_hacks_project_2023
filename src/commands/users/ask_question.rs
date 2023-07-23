@@ -7,6 +7,9 @@ use super::super::super::json_structs::*;
 pub fn ask_question(
     _command_interaction: &mut interaction::application_command::ApplicationCommandInteraction,
 ) -> (CreateEmbed, Option<[String; 4]>, Option<[String; 4]>) {
+
+    println!("ask_question called");
+
     let question = parse::generate_question();
 
     let mut embed = CreateEmbed::default();

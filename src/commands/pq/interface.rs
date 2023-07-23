@@ -40,3 +40,16 @@ pub fn user_update_points(
         .set(points.eq(new_points))
         .execute(conn)
 }
+
+pub fn get_user(
+    conn: &mut PgConnection,
+    search: i64,
+) -> Result<UserInformation, diesel::result::Error> {
+    user_information.find(search).first::<UserInformation>(conn)
+}
+
+pub fn get_all_users(
+    conn: &mut PgConnection,
+) -> Result<Vec<UserInformation>, diesel::result::Error> {
+    user_information.load::<UserInformation>(conn)
+}
