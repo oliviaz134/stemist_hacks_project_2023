@@ -4,12 +4,15 @@ use dotenv::dotenv;
 
 use serenity::{
     async_trait,
-	prelude::*,
-	model::{
+    model::{
+        application::command::Command,
         application::interaction::{Interaction, InteractionResponseType},
-		gateway::Ready
-    }
+        gateway::Ready,
+    },
+    prelude::*,
 };
+
+use serenity::builder::CreateEmbed;
 
 pub mod commands;
 pub mod models;
@@ -23,39 +26,30 @@ impl EventHandler for Handler {
         if let Interaction::ApplicationCommand(mut command) = interaction {
             let content = match command.data.name.as_str() {
                 "help" => commands::users::help::help(),
-                _ => "not implemented".to_string(),
+                "ask_question" => {
+                    commands::users::ask_question::ask_question(&mut command)
+                }
+                _ => {
+                    let mut embed = CreateEmbed::default();
+
+                    embed
+                        .title("Error")
+                        .description("Unknown command.")
+                        .color(0xff0000);
+
+                    embed
+                }
             };
 
-            if content.len() > 2000 {
-                use std::fs;
-                let _ = fs::create_dir("./tmp");
-
-                fs::write("./tmp/message.txt", &content).expect("Unable to write file");
-
-                if let Err(why) = command
-                    .create_interaction_response(&ctx.http, |response| {
-                        response
-                            .kind(InteractionResponseType::ChannelMessageWithSource)
-                            .interaction_response_data(|message| {
-                                message.add_file("./tmp/message.txt")
-                            })
-                    })
-                    .await
-                {
-                    println!("Cannot respond to slash command: {}", why);
-                }
-                let _ = fs::remove_file("./tmp/message.txt");
-            } else {
-                if let Err(why) = command
-                    .create_interaction_response(&ctx.http, |response| {
-                        response
-                            .kind(InteractionResponseType::ChannelMessageWithSource)
-                            .interaction_response_data(|message| message.content(content))
-                    })
-                    .await
-                {
-                    println!("Cannot respond to slash command: {}", why);
-                }
+            if let Err(why) = command
+                .create_interaction_response(&ctx.http, |response| {
+                    response
+                        .kind(InteractionResponseType::ChannelMessageWithSource)
+                        .interaction_response_data(|message| message.add_embed(content))
+                })
+                .await
+            {
+                println!("Cannot respond to slash command: {}", why);
             }
         }
     }
@@ -63,11 +57,18 @@ impl EventHandler for Handler {
     async fn ready(&self, ctx: Context, ready: Ready) {
         println!("{} is connected!", ready.user.name);
 
-        let guild_command = Command::create_global_application_command(&ctx.http, |command| {
+        let help_command = Command::create_global_application_command(&ctx.http, |command| {
             commands::users::help::register(command)
-        }).await;
+        })
+        .await;
 
-        println!("CREATED: {:#?}", guild_command);
+        let ask_question_command =
+            Command::create_global_application_command(&ctx.http, |command| {
+                commands::users::ask_question::register(command)
+            })
+            .await;
+
+        println!("CREATED: {:#?}\n{:#?}", help_command, ask_question_command);
     }
 }
 
