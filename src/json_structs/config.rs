@@ -22,3 +22,4 @@ pub struct Question {
 pub struct Config {
     pub questions: Vec<Question>
 }
+

@@ -9,6 +9,10 @@ use super::config::*;
 
 static JSON_DATA: Lazy<Mutex<Config>> = Lazy::new(|| Mutex::new(Config::default()));
 
+pub fn json_data_size() -> usize {
+    JSON_DATA.lock().unwrap().questions.len()
+}
+
 pub fn parse_json_questions() {
     let configuration_file = fs::read_to_string("./resources/questions_and_answers.json")
         .expect("Should have been able to read the file");
