@@ -4,21 +4,21 @@
             "id": 1,
             "question": "What is a programming language?",
             "options": {
-                "A": "A set of algorithms",
-                "B": "A formal language to communicate with computers",
-                "C": "A type of computer hardware",
-                "D": "A database management system"
+                "A": "Set of algorithms",
+                "B": "Formal language for computers",
+                "C": "Type of computer hardware",
+                "D": "Database management system"
             },
             "answer": "B"
         },
         {
             "id": 2,
-            "question": "What is the difference between a compiler and an interpreter?",
+            "question": "Difference between compiler and interpreter?",
             "options": {
-                "A": "Compiler translates code line-by-line, while an interpreter translates the entire source code",
-                "B": "Compiler generates an executable file, while an interpreter does not",
-                "C": "Compiler is used for web development, while an interpreter is used for desktop applications",
-                "D": "There is no difference between a compiler and an interpreter"
+                "A": "Compiler: line-by-line, Interpreter: entire code",
+                "B": "Compiler generates executable, Interpreter does not",
+                "C": "Compiler for web, Interpreter for desktop",
+                "D": "No difference between compiler and interpreter"
             },
             "answer": "B"
         },
@@ -26,21 +26,21 @@
             "id": 3,
             "question": "What are data structures?",
             "options": {
-                "A": "A set of programming tools",
-                "B": "Ways to organize and store data in a computer",
-                "C": "A type of computer virus",
-                "D": "Programming languages used for data manipulation"
+                "A": "Programming tools",
+                "B": "Ways to organize and store data",
+                "C": "Type of computer virus",
+                "D": "Programming languages for data manipulation"
             },
             "answer": "B"
         },
         {
             "id": 4,
-            "question": "What is object-oriented programming (OOP)?",
+            "question": "What is object-oriented programming?",
             "options": {
-                "A": "A style of writing comments in code",
-                "B": "A programming paradigm based on objects and classes",
-                "C": "A method for optimizing database queries",
-                "D": "An approach to developing machine learning models"
+                "A": "Style of writing comments",
+                "B": "Programming based on objects and classes",
+                "C": "Method for optimizing database queries",
+                "D": "Approach to developing machine learning models"
             },
             "answer": "B"
         },
@@ -48,27 +48,27 @@
             "id": 5,
             "question": "Explain the concept of recursion.",
             "options": {
-                "A": "A programming language feature for code reusability",
-                "B": "A technique where a function calls itself to solve a problem",
-                "C": "A way to write efficient loops in programming",
-                "D": "A method to create user interfaces in web development"
+                "A": "Language feature for code reusability",
+                "B": "Technique where a function calls itself",
+                "C": "Way to write efficient loops",
+                "D": "Method to create user interfaces in web dev"
             },
             "answer": "B"
         },
         {
             "id": 6,
-            "question": "What is the importance of version control in software development?",
+            "question": "Importance of version control in software development?",
             "options": {
-                "A": "It helps in creating visually appealing user interfaces",
-                "B": "It allows developers to work on different versions of the same code simultaneously",
-                "C": "It is a programming language used for data analysis",
-                "D": "It automates software testing processes"
+                "A": "Helps in creating visually appealing UI",
+                "B": "Allows developers to work on different versions",
+                "C": "Programming language for data analysis",
+                "D": "Automates software testing processes"
             },
             "answer": "B"
         },
         {
             "id": 7,
-            "question": "Which data structure is used to implement a Last-In-First-Out (LIFO) behavior?",
+            "question": "Which data structure implements Last-In-First-Out (LIFO)?",
             "options": {
                 "A": "Queue",
                 "B": "Linked List",
@@ -79,7 +79,7 @@
         },
         {
             "id": 8,
-            "question": "What is the purpose of an 'index' in a database?",
+            "question": "Purpose of an 'index' in a database?",
             "options": {
                 "A": "To encrypt sensitive data",
                 "B": "To optimize search and retrieval operations",
@@ -90,7 +90,7 @@
         },
         {
             "id": 9,
-            "question": "Which programming language is commonly used for web development?",
+            "question": "Commonly used programming language for web development?",
             "options": {
                 "A": "Java",
                 "B": "Python",
@@ -101,18 +101,18 @@
         },
         {
             "id": 10,
-            "question": "What is the purpose of CSS in web development?",
+            "question": "Purpose of CSS in web development?",
             "options": {
                 "A": "To create interactive web pages",
                 "B": "To store and manage data",
-                "C": "To define the presentation and layout of HTML documents",
+                "C": "To define presentation and layout of HTML docs",
                 "D": "To perform server-side operations"
             },
             "answer": "C"
         },
         {
             "id": 11,
-            "question": "Which component is responsible for executing arithmetic and logical operations in a computer?",
+            "question": "Component for executing arithmetic and logical operations?",
             "options": {
                 "A": "RAM (Random Access Memory)",
                 "B": "CPU (Central Processing Unit)",
@@ -134,7 +134,7 @@
         },
         {
             "id": 13,
-            "question": "Which type of computer memory is non-volatile and can retain data even when the power is off?",
+            "question": "Type of computer memory that's non-volatile?",
             "options": {
                 "A": "RAM (Random Access Memory)",
                 "B": "Cache Memory",
@@ -147,16 +147,16 @@
             "id": 14,
             "question": "What are embedded systems?",
             "options": {
-                "A": "Computers integrated into jewelry",
-                "B": "Computers used in network infrastructure",
-                "C": "Computers with a dedicated function within a larger system",
-                "D": "Computers designed for gaming"
+                "A": "Computers in jewelry",
+                "B": "Computers in network infrastructure",
+                "C": "Computers with a dedicated function",
+                "D": "Computers for gaming"
             },
             "answer": "C"
         },
         {
             "id": 15,
-            "question": "Which programming language is commonly used for embedded systems development?",
+            "question": "Commonly used language for embedded systems?",
             "options": {
                 "A": "Java",
                 "B": "Python",
@@ -167,18 +167,18 @@
         },
         {
             "id": 16,
-            "question": "What is the purpose of a Real-Time Operating System (RTOS) in embedded systems?",
+            "question": "Purpose of a Real-Time Operating System (RTOS) in embedded systems?",
             "options": {
-                "A": "To improve graphics performance",
-                "B": "To ensure that the system responds to events within a specific time frame",
-                "C": "To manage database operations",
-                "D": "To provide internet connectivity"
+                "A": "Improve graphics performance",
+                "B": "Ensure timely response to events",
+                "C": "Manage database operations",
+                "D": "Provide internet connectivity"
             },
             "answer": "B"
         },
         {
             "id": 17,
-            "question": "Which type of memory is often used for program storage in microcontrollers?",
+            "question": "Memory often used for program storage in microcontrollers?",
             "options": {
                 "A": "RAM (Random Access Memory)",
                 "B": "ROM (Read-Only Memory)",
@@ -189,12 +189,12 @@
         },
         {
             "id": 18,
-            "question": "What is the purpose of an Analog-to-Digital Converter (ADC) in embedded systems?",
+            "question": "Purpose of an Analog-to-Digital Converter (ADC) in embedded systems?",
             "options": {
-                "A": "To convert digital signals into analog signals",
-                "B": "To convert analog signals into digital signals",
-                "C": "To compress data for storage",
-                "D": "To facilitate wireless communication"
+                "A": "Convert digital signals into analog",
+                "B": "Convert analog signals into digital",
+                "C": "Compress data for storage",
+                "D": "Facilitate wireless communication"
             },
             "answer": "B"
         },
@@ -202,16 +202,16 @@
             "id": 19,
             "question": "What is a binary search algorithm?",
             "options": {
-                "A": "An algorithm to sort data in descending order",
-                "B": "An algorithm to search for a target value in a sorted list by repeatedly dividing it in half",
-                "C": "An algorithm to find the sum of all elements in a list",
-                "D": "An algorithm to swap the positions of two elements in an array"
+                "A": "Algorithm to sort data in descending order",
+                "B": "Algorithm to search by repeatedly dividing a sorted list",
+                "C": "Algorithm to find sum of all elements in a list",
+                "D": "Algorithm to swap positions of two elements"
             },
             "answer": "B"
         },
         {
             "id": 20,
-            "question": "What is the time complexity of inserting an element at the end of an array with 'n' elements?",
+            "question": "Time complexity of inserting an element at the end of an array?",
             "options": {
                 "A": "O(1)",
                 "B": "O(n)",
@@ -222,18 +222,18 @@
         },
         {
             "id": 21,
-            "question": "What is the purpose of a firewall in network security?",
+            "question": "Purpose of a firewall in network security?",
             "options": {
-                "A": "To prevent unauthorized access to a computer system",
-                "B": "To amplify network signals",
-                "C": "To optimize data transfer speed",
-                "D": "To provide network encryption"
+                "A": "Prevent unauthorized access to a computer system",
+                "B": "Amplify network signals",
+                "C": "Optimize data transfer speed",
+                "D": "Provide network encryption"
             },
             "answer": "A"
         },
         {
             "id": 22,
-            "question": "Which type of database model uses a collection of tables to represent data relationships?",
+            "question": "Type of database model using tables to represent data relationships?",
             "options": {
                 "A": "Hierarchical",
                 "B": "Relational",
@@ -244,18 +244,18 @@
         },
         {
             "id": 23,
-            "question": "What is the purpose of the 'if' statement in programming?",
+            "question": "Purpose of the 'if' statement in programming?",
             "options": {
-                "A": "To declare a variable",
-                "B": "To loop through an array",
-                "C": "To perform conditional branching based on a condition",
-                "D": "To define a function"
+                "A": "Declare a variable",
+                "B": "Loop through an array",
+                "C": "Perform conditional branching based on a condition",
+                "D": "Define a function"
             },
             "answer": "C"
         },
         {
             "id": 24,
-            "question": "Which sorting algorithm has an average time complexity of O(n log n)?",
+            "question": "Sorting algorithm with average time complexity O(n log n)?",
             "options": {
                 "A": "Bubble Sort",
                 "B": "Merge Sort",
@@ -266,29 +266,29 @@
         },
         {
             "id": 25,
-            "question": "What is the role of an operating system in a computer?",
+            "question": "Role of an operating system in a computer?",
             "options": {
-                "A": "To provide power to the computer",
-                "B": "To manage hardware resources and provide services to applications",
-                "C": "To display graphics on the screen",
-                "D": "To connect the computer to the internet"
+                "A": "Provide power to the computer",
+                "B": "Manage hardware resources and provide services to applications",
+                "C": "Display graphics on the screen",
+                "D": "Connect the computer to the internet"
             },
             "answer": "B"
         },
         {
             "id": 26,
-            "question": "What is the purpose of a binary tree in computer science?",
+            "question": "Purpose of a binary tree in computer science?",
             "options": {
-                "A": "To represent hierarchical data structures",
-                "B": "To perform mathematical calculations",
-                "C": "To store unsorted lists of data",
-                "D": "To encrypt sensitive information"
+                "A": "Represent hierarchical data structures",
+                "B": "Perform mathematical calculations",
+                "C": "Store unsorted lists of data",
+                "D": "Encrypt sensitive information"
             },
             "answer": "A"
         },
         {
             "id": 27,
-            "question": "Which type of database is optimized for read-heavy workloads and can provide faster query responses?",
+            "question": "Database optimized for read-heavy workloads and faster query responses?",
             "options": {
                 "A": "Relational Database",
                 "B": "NoSQL Database",
@@ -299,18 +299,18 @@
         },
         {
             "id": 28,
-            "question": "What is the purpose of the 'else' statement in programming?",
+            "question": "Purpose of the 'else' statement in programming?",
             "options": {
-                "A": "To declare a variable",
-                "B": "To loop through an array",
-                "C": "To perform an action when a condition is true",
-                "D": "To define a function"
+                "A": "Declare a variable",
+                "B": "Loop through an array",
+                "C": "Perform an action when a condition is true",
+                "D": "Define a function"
             },
             "answer": "C"
         },
         {
             "id": 29,
-            "question": "Which data structure is used to implement a First-In-First-Out (FIFO) behavior?",
+            "question": "Data structure used for First-In-First-Out (FIFO) behavior?",
             "options": {
                 "A": "Stack",
                 "B": "Linked List",
@@ -321,12 +321,12 @@
         },
         {
             "id": 30,
-            "question": "What is the purpose of an Integrated Development Environment (IDE) in software development?",
+            "question": "Purpose of an Integrated Development Environment (IDE) in software development?",
             "options": {
-                "A": "To manage database operations",
-                "B": "To optimize search and retrieval operations",
-                "C": "To provide an interface for developers to write, test, and debug code",
-                "D": "To compress files"
+                "A": "Manage database operations",
+                "B": "Optimize search and retrieval operations",
+                "C": "Provide an interface for developers to write, test, and debug code",
+                "D": "Compress files"
             },
             "answer": "C"
         },
@@ -334,10 +334,10 @@
             "id": 31,
             "question": "What is Digital Signal Processing (DSP)?",
             "options": {
-                "A": "A process of converting analog signals to digital format",
-                "B": "A technique for encrypting digital data",
-                "C": "A method of analyzing and manipulating digital signals",
-                "D": "A process of compressing digital images"
+                "A": "Convert analog signals to digital format",
+                "B": "Encrypt digital data",
+                "C": "Analyze and manipulate digital signals",
+                "D": "Compress digital images"
             },
             "answer": "C"
         },
@@ -345,21 +345,21 @@
             "id": 32,
             "question": "What is the Nyquist-Shannon sampling theorem?",
             "options": {
-                "A": "A theorem for quantizing analog signals",
-                "B": "A theorem for downsampling digital signals",
-                "C": "A theorem for analyzing continuous-time signals",
-                "D": "A theorem for sampling and reconstructing continuous-time signals"
+                "A": "Quantize analog signals",
+                "B": "Downsample digital signals",
+                "C": "Analyze continuous-time signals",
+                "D": "Sample and reconstruct continuous-time signals"
             },
             "answer": "D"
         },
         {
             "id": 33,
-            "question": "What is the purpose of a digital filter in DSP?",
+            "question": "Purpose of a digital filter in DSP?",
             "options": {
-                "A": "To convert digital signals to analog signals",
-                "B": "To remove noise from digital signals",
-                "C": "To convert analog signals to digital signals",
-                "D": "To amplify digital signals"
+                "A": "Convert digital signals to analog signals",
+                "B": "Remove noise from digital signals",
+                "C": "Convert analog signals to digital signals",
+                "D": "Amplify digital signals"
             },
             "answer": "B"
         },
@@ -367,43 +367,43 @@
             "id": 34,
             "question": "What is the Fast Fourier Transform (FFT) used for?",
             "options": {
-                "A": "To convert time-domain signals to frequency-domain signals",
-                "B": "To compress digital audio files",
-                "C": "To convert analog signals to digital format",
-                "D": "To increase the resolution of digital images"
+                "A": "Convert time-domain signals to frequency-domain signals",
+                "B": "Compress digital audio files",
+                "C": "Convert analog signals to digital format",
+                "D": "Increase the resolution of digital images"
             },
             "answer": "A"
         },
         {
             "id": 35,
-            "question": "What is the difference between FIR and IIR filters?",
+            "question": "Difference between FIR and IIR filters?",
             "options": {
-                "A": "FIR filters are used for continuous-time signals, while IIR filters are used for discrete-time signals",
-                "B": "FIR filters have feedback, while IIR filters do not",
-                "C": "FIR filters have infinite impulse response, while IIR filters have finite impulse response",
-                "D": "FIR filters are used in image processing, while IIR filters are used in audio processing"
+                "A": "FIR: continuous-time signals, IIR: discrete-time signals",
+                "B": "FIR: feedback, IIR: no feedback",
+                "C": "FIR: infinite impulse response, IIR: finite impulse response",
+                "D": "FIR: image processing, IIR: audio processing"
             },
             "answer": "C"
         },
         {
             "id": 36,
-            "question": "What is the purpose of decimation in DSP?",
+            "question": "Purpose of decimation in DSP?",
             "options": {
-                "A": "To increase the sampling rate of a digital signal",
-                "B": "To decrease the sampling rate of a digital signal",
-                "C": "To add noise to a digital signal",
-                "D": "To convert a digital signal to an analog signal"
+                "A": "Increase the sampling rate of a digital signal",
+                "B": "Decrease the sampling rate of a digital signal",
+                "C": "Add noise to a digital signal",
+                "D": "Convert a digital signal to an analog signal"
             },
             "answer": "B"
         },
         {
             "id": 37,
-            "question": "What is the role of the z-transform in DSP?",
+            "question": "Role of the z-transform in DSP?",
             "options": {
-                "A": "To convert continuous-time signals to discrete-time signals",
-                "B": "To convert digital signals to analog signals",
-                "C": "To analyze the frequency content of a digital signal",
-                "D": "To compress digital video files"
+                "A": "Convert continuous-time signals to discrete-time signals",
+                "B": "Convert digital signals to analog signals",
+                "C": "Analyze the frequency content of a digital signal",
+                "D": "Compress digital video files"
             },
             "answer": "C"
         },
@@ -411,16 +411,16 @@
             "id": 38,
             "question": "What is aliasing in the context of DSP?",
             "options": {
-                "A": "A process of reducing the size of a digital signal",
-                "B": "A technique for compressing digital audio files",
-                "C": "A phenomenon where high-frequency components in a signal are misrepresented as lower frequencies",
-                "D": "A method for increasing the resolution of digital images"
+                "A": "Reduce the size of a digital signal",
+                "B": "Compress digital audio files",
+                "C": "High-frequency components misrepresented as lower frequencies",
+                "D": "Increase the resolution of digital images"
             },
             "answer": "C"
         },
         {
             "id": 39,
-            "question": "Which DSP technique is used for echo cancellation in audio signals?",
+            "question": "DSP technique used for echo cancellation in audio signals?",
             "options": {
                 "A": "Fast Fourier Transform (FFT)",
                 "B": "Discrete Cosine Transform (DCT)",
@@ -431,12 +431,12 @@
         },
         {
             "id": 40,
-            "question": "What is the purpose of quantization in DSP?",
+            "question": "Purpose of quantization in DSP?",
             "options": {
-                "A": "To remove noise from digital signals",
-                "B": "To convert analog signals to digital format",
-                "C": "To compress digital images",
-                "D": "To approximate a continuous range of values with a finite set of discrete values"
+                "A": "Remove noise from digital signals",
+                "B": "Convert analog signals to digital format",
+                "C": "Compress digital images",
+                "D": "Approximate a continuous range of values with a finite set of discrete values"
             },
             "answer": "D"
         },
@@ -444,27 +444,27 @@
             "id": 41,
             "question": "What is Machine Learning?",
             "options": {
-                "A": "A branch of computer science that focuses on hardware development",
-                "B": "A field of study that deals with the design of intelligent agents",
-                "C": "A set of algorithms that allow computers to learn patterns from data",
-                "D": "A technique used to compress digital images"
+                "A": "Computer science branch for hardware development",
+                "B": "Study field for design of intelligent agents",
+                "C": "Algorithms allowing computers to learn from data",
+                "D": "Technique to compress digital images"
             },
             "answer": "C"
         },
         {
             "id": 42,
-            "question": "What is the primary goal of supervised learning?",
+            "question": "Primary goal of supervised learning?",
             "options": {
-                "A": "To predict future outcomes based on past data",
-                "B": "To classify data into predefined categories",
-                "C": "To analyze patterns in unlabeled data",
-                "D": "To find the best action in a given situation"
+                "A": "Predict future outcomes from past data",
+                "B": "Classify data into predefined categories",
+                "C": "Analyze patterns in unlabeled data",
+                "D": "Find the best action in a given situation"
             },
             "answer": "A"
         },
         {
             "id": 43,
-            "question": "Which type of artificial intelligence is designed to mimic human-like cognitive abilities?",
+            "question": "AI designed to mimic human-like cognitive abilities?",
             "options": {
                 "A": "Narrow AI",
                 "B": "General AI",
@@ -475,18 +475,18 @@
         },
         {
             "id": 44,
-            "question": "What is the purpose of the activation function in a neural network?",
+            "question": "Purpose of activation function in a neural network?",
             "options": {
-                "A": "To determine the learning rate of the network",
-                "B": "To adjust the weights of the neural connections",
-                "C": "To calculate the error between predicted and actual outputs",
-                "D": "To introduce non-linearity and enable complex modeling"
+                "A": "Determine the learning rate of the network",
+                "B": "Adjust the weights of the neural connections",
+                "C": "Calculate the error between predicted and actual outputs",
+                "D": "Introduce non-linearity and enable complex modeling"
             },
             "answer": "D"
         },
         {
             "id": 45,
-            "question": "Which algorithm is commonly used for clustering in unsupervised learning?",
+            "question": "Algorithm commonly used for clustering in unsupervised learning?",
             "options": {
                 "A": "Naive Bayes",
                 "B": "K-Nearest Neighbors (KNN)",
@@ -497,40 +497,40 @@
         },
         {
             "id": 46,
-            "question": "What is the bias-variance tradeoff in machine learning?",
+            "question": "Bias-variance tradeoff in machine learning?",
             "options": {
-                "A": "A tradeoff between the number of features and the complexity of the model",
-                "B": "A tradeoff between the accuracy and interpretability of the model",
-                "C": "A tradeoff between the computational cost and performance of the model",
-                "D": "A tradeoff between overfitting and underfitting"
+                "A": "Tradeoff between features and model complexity",
+                "B": "Tradeoff between accuracy and interpretability",
+                "C": "Tradeoff between computational cost and performance",
+                "D": "Tradeoff between overfitting and underfitting"
             },
             "answer": "D"
         },
         {
             "id": 47,
-            "question": "What is the role of reinforcement learning in AI?",
+            "question": "Role of reinforcement learning in AI?",
             "options": {
-                "A": "To optimize weights in a neural network",
-                "B": "To classify data into predefined categories",
-                "C": "To enable machines to learn from feedback and rewards",
-                "D": "To analyze patterns in unlabeled data"
+                "A": "Optimize weights in a neural network",
+                "B": "Classify data into predefined categories",
+                "C": "Enable machines to learn from feedback and rewards",
+                "D": "Analyze patterns in unlabeled data"
             },
             "answer": "C"
         },
         {
             "id": 48,
-            "question": "What is transfer learning in the context of deep learning?",
+            "question": "Transfer learning in the context of deep learning?",
             "options": {
-                "A": "A technique to transfer data between different neural networks",
-                "B": "A technique to transfer learned knowledge from one task to another",
-                "C": "A technique to transfer weights from one layer to another",
-                "D": "A technique to transfer data from a local machine to the cloud"
+                "A": "Transfer data between different neural networks",
+                "B": "Transfer learned knowledge from one task to another",
+                "C": "Transfer weights from one layer to another",
+                "D": "Transfer data from local machine to the cloud"
             },
             "answer": "B"
         },
         {
             "id": 49,
-            "question": "Which AI technique is used for natural language processing and understanding?",
+            "question": "AI technique for natural language processing and understanding?",
             "options": {
                 "A": "Reinforcement Learning",
                 "B": "Supervised Learning",
@@ -541,29 +541,29 @@
         },
         {
             "id": 50,
-            "question": "What is the purpose of overfitting in machine learning?",
+            "question": "Purpose of overfitting in machine learning?",
             "options": {
-                "A": "To improve model performance on unseen data",
-                "B": "To ensure that the model generalizes well to different data distributions",
-                "C": "To memorize the training data at the expense of poor performance on unseen data",
-                "D": "To optimize the learning rate of the model"
+                "A": "Improve model performance on unseen data",
+                "B": "Ensure model generalizes well to different data",
+                "C": "Memorize training data at expense of poor performance on unseen data",
+                "D": "Optimize the learning rate of the model"
             },
             "answer": "C"
         },
         {
             "id": 51,
-            "question": "In the context of machine learning models, what is feature engineering?",
+            "question": "What is feature engineering in machine learning?",
             "options": {
-                "A": "A technique to generate new features automatically",
-                "B": "The process of identifying and selecting the most important features in the data",
-                "C": "The manual process of creating and selecting relevant features to improve model performance",
-                "D": "The process of reducing the dimensionality of the data"
+                "A": "Technique to generate new features automatically",
+                "B": "Identifying and selecting important features",
+                "C": "Manual creation of relevant features",
+                "D": "Process of reducing data dimensionality"
             },
             "answer": "C"
         },
         {
             "id": 52,
-            "question": "Which evaluation metric is commonly used for binary classification problems?",
+            "question": "Common evaluation metric for binary classification problems?",
             "options": {
                 "A": "Mean Squared Error (MSE)",
                 "B": "F1-score",
@@ -574,29 +574,29 @@
         },
         {
             "id": 53,
-            "question": "What is the purpose of the Adam optimizer in neural networks?",
+            "question": "Purpose of Adam optimizer in neural networks?",
             "options": {
-                "A": "To adjust the learning rate during training",
-                "B": "To update the weights using momentum and adaptive learning rates",
-                "C": "To regularize the model and prevent overfitting",
-                "D": "To reduce the computational cost of training"
+                "A": "Adjust learning rate during training",
+                "B": "Update weights using momentum and adaptive rates",
+                "C": "Regularize the model and prevent overfitting",
+                "D": "Reduce computational cost of training"
             },
             "answer": "B"
         },
         {
             "id": 54,
-            "question": "What is the Curse of Dimensionality in machine learning?",
+            "question": "What is the Curse of Dimensionality in ML?",
             "options": {
-                "A": "The challenge of dealing with missing data in high-dimensional datasets",
-                "B": "The phenomenon where models become overly complex in high-dimensional spaces",
-                "C": "The difficulty of visualizing data in high-dimensional spaces",
-                "D": "The challenge of finding enough data for high-dimensional problems"
+                "A": "Challenge of dealing with missing data",
+                "B": "Models become overly complex in high dimensions",
+                "C": "Difficulty of visualizing high-dimensional data",
+                "D": "Challenge of finding enough data for high dimensions"
             },
             "answer": "B"
         },
         {
             "id": 55,
-            "question": "Which algorithm is commonly used for natural language processing tasks such as text classification?",
+            "question": "Algorithm commonly used for NLP tasks like text classification?",
             "options": {
                 "A": "K-Means",
                 "B": "Random Forest",
@@ -607,29 +607,29 @@
         },
         {
             "id": 56,
-            "question": "What is the role of a GAN (Generative Adversarial Network) in deep learning?",
+            "question": "Role of a GAN (Generative Adversarial Network) in deep learning?",
             "options": {
-                "A": "To generate random noise for data augmentation",
-                "B": "To optimize the learning rate in a neural network",
-                "C": "To enable unsupervised learning",
-                "D": "To generate synthetic data and create realistic samples"
+                "A": "Generate random noise for data augmentation",
+                "B": "Optimize learning rate in a neural network",
+                "C": "Enable unsupervised learning",
+                "D": "Generate synthetic data and create realistic samples"
             },
             "answer": "D"
         },
         {
             "id": 57,
-            "question": "What is the purpose of the forward pass in neural network training?",
+            "question": "Purpose of the forward pass in neural network training?",
             "options": {
-                "A": "To update the model parameters based on the training data",
-                "B": "To compute the gradient of the loss function with respect to the model parameters",
-                "C": "To propagate the input data through the network to generate predictions",
-                "D": "To reduce the complexity of the neural network"
+                "A": "Update model parameters based on training data",
+                "B": "Compute gradient of the loss function",
+                "C": "Propagate input data through the network to generate predictions",
+                "D": "Reduce neural network complexity"
             },
             "answer": "C"
         },
         {
             "id": 58,
-            "question": "Which technique is used to handle missing data in a dataset?",
+            "question": "Which technique is used to handle missing data?",
             "options": {
                 "A": "Data augmentation",
                 "B": "Principal Component Analysis (PCA)",
@@ -640,23 +640,23 @@
         },
         {
             "id": 59,
-            "question": "What is the purpose of the backpropagation algorithm?",
+            "question": "Purpose of the backpropagation algorithm?",
             "options": {
-                "A": "To calculate the loss function",
-                "B": "To compute the gradient of the loss function with respect to the model parameters",
-                "C": "To reduce the overfitting of the model",
-                "D": "To improve the efficiency of neural network training"
+                "A": "Calculate the loss function",
+                "B": "Compute gradient of the loss function",
+                "C": "Reduce model overfitting",
+                "D": "Improve neural network training efficiency"
             },
             "answer": "B"
         },
         {
             "id": 60,
-            "question": "What is the role of a decision tree in machine learning?",
+            "question": "Role of a decision tree in machine learning?",
             "options": {
-                "A": "To classify data into predefined categories",
-                "B": "To optimize weights in a neural network",
-                "C": "To encode and compress data",
-                "D": "To reduce the dimensionality of the data"
+                "A": "Classify data into predefined categories",
+                "B": "Optimize weights in a neural network",
+                "C": "Encode and compress data",
+                "D": "Reduce data dimensionality"
             },
             "answer": "A"
         }
