@@ -1,5 +1,7 @@
 extern crate diesel;
 
+use std::sync::{Arc, Mutex};
+
 use dotenv::dotenv;
 
 use serenity::{
@@ -9,7 +11,7 @@ use serenity::{
         application::command::Command,
         application::interaction::{Interaction, InteractionResponseType},
         gateway::Ready,
-        prelude::*,
+        prelude::{component::ButtonStyle, *},
     },
     prelude::*,
 };
@@ -17,9 +19,9 @@ use serenity::{
 use serenity::builder::CreateEmbed;
 
 pub mod commands;
+pub mod json_structs;
 pub mod models;
 pub mod schema;
-pub mod json_structs;
 
 struct Handler;
 
@@ -40,41 +42,49 @@ impl EventHandler for Handler {
                         .description("Unknown command.")
                         .color(0xff0000);
 
-                    embed
+                    (embed, None, None)
                 }
             };
+
+            let ids: Arc<Mutex<[String; 4]>> = Arc::new(Mutex::new(content.clone().1.unwrap()));
+            let choices: Arc<Mutex<[String; 4]>> = Arc::new(Mutex::new(content.clone().2.unwrap()));
 
             if let Err(why) = command
                 .create_interaction_response(&ctx.http, |response| {
                     response
                         .kind(InteractionResponseType::ChannelMessageWithSource)
                         .interaction_response_data(|message| {
-                            message.add_embed(content).components(|c| {
-                                c.create_action_row(
-                                    |row: &mut serenity::builder::CreateActionRow| {
-                                        row.create_select_menu(|menu| {
-                                            menu.custom_id("animal_select");
-                                            menu.placeholder("No animal selected");
-                                            menu.options(|f| {
-                                                f.create_option(|o| {
-                                                    o.label("🐈 meow").value("Cat")
-                                                });
-                                                f.create_option(|o| {
-                                                    o.label("🐕 woof").value("Dog")
-                                                });
-                                                f.create_option(|o| {
-                                                    o.label("🐎 neigh").value("Horse")
-                                                });
-                                                f.create_option(|o| {
-                                                    o.label("🦙 hoooooooonk").value("Alpaca")
-                                                });
-                                                f.create_option(|o| {
-                                                    o.label("🦀 crab rave").value("Ferris")
-                                                })
-                                            })
-                                        })
-                                    },
-                                )
+                            message.add_embed(content.0);
+
+                            if content.1 == None || content.2 == None {
+                                return message;
+                            }
+
+                            message.components(|c| {
+                                c.create_action_row(|a| {
+                                    a.create_button(|b| {
+                                        b.custom_id(&ids.lock().unwrap()[0])
+                                            .label(&choices.lock().unwrap()[0])
+                                            .style(ButtonStyle::Primary)
+                                    });
+                                    a.create_button(|b| {
+                                        b.custom_id(&ids.lock().unwrap()[1])
+                                            .label(&choices.lock().unwrap()[1])
+                                            .style(ButtonStyle::Primary)
+                                    });
+                                    a.create_button(|b| {
+                                        b.custom_id(&ids.lock().unwrap()[2])
+                                            .label(&choices.lock().unwrap()[2])
+                                            .style(ButtonStyle::Primary)
+                                    });
+                                    a.create_button(|b| {
+                                        b.custom_id(&ids.lock().unwrap()[3])
+                                            .label(&choices.lock().unwrap()[3])
+                                            .style(ButtonStyle::Primary)
+                                    });
+
+                                    return a;
+                                })
                             })
                         })
                 })
@@ -83,28 +93,41 @@ impl EventHandler for Handler {
                 println!("Cannot respond to slash command: {}", why);
             }
         }
-    
+
         if let Interaction::MessageComponent(response) = interaction.clone() {
-            if response.data.custom_id == "animal_select" {
-                let mut embed = CreateEmbed::default();
+            let mut embed = CreateEmbed::default();
 
+            let answered_correctly = json_structs::parse::check_question(
+                response.message.embeds[0].fields[0]
+                    .value
+                    .parse::<i64>()
+                    .unwrap(),
+                response.clone().data.custom_id,
+            );
+
+            if answered_correctly {
                 embed
-                    .title("Animal selected")
-                    .description(format!("You selected: {}", response.data.values[0]))
+                    .title("Correct Answer!")
+                    .description(format!("You selected: {}", response.data.custom_id))
                     .color(0x00ff00);
+            } else {
+                embed
+                    .title("Wrong answer!")
+                    .description(format!("You selected: {}", response.data.custom_id))
+                    .color(0xff0000);
+            }
 
-                if let Err(why) = response
-                    .create_interaction_response(&ctx.http, |response| {
-                        response
-                            .kind(InteractionResponseType::ChannelMessageWithSource)
-                            .interaction_response_data(|message| {
-                                message.add_embed(embed)
-                            })
-                    })
-                    .await
-                {
-                    println!("Cannot respond to slash command: {}", why);
-                }
+            if let Err(why) = response
+                .create_interaction_response(&ctx.http, |response| {
+                    response
+                        .kind(InteractionResponseType::ChannelMessageWithSource)
+                        .interaction_response_data(|message| {
+                            message.add_embed(embed).ephemeral(true)
+                        })
+                })
+                .await
+            {
+                println!("Cannot respond to slash command: {}", why);
             }
         }
     }
@@ -112,25 +135,23 @@ impl EventHandler for Handler {
     async fn ready(&self, ctx: Context, ready: Ready) {
         println!("{} is connected!", ready.user.name);
 
-        let help_command = Command::create_global_application_command(&ctx.http, |command| {
+        let _ = Command::create_global_application_command(&ctx.http, |command| {
             commands::users::help::register(command)
         })
         .await;
 
-        println!("Registered slash command: {:?}", help_command);
-
-        let ask_question_command =
-            Command::create_global_application_command(&ctx.http, |command| {
-                commands::users::ask_question::register(command)
-            })
-            .await;
-
-        println!("Registered slash command: {:?}", ask_question_command);
+        let _ = Command::create_global_application_command(&ctx.http, |command| {
+            commands::users::ask_question::register(command)
+        })
+        .await;
     }
 }
 
 #[tokio::main]
 async fn main() {
+    json_structs::parse::parse_json_questions();
+    println!("{:#?}", json_structs::parse::generate_question());
+
     // Configure the client with your Discord bot token in the environment.
     dotenv().ok();
     let discord_token = std::env::var("DISCORD_ID").expect("DISCORD_ID must be set.");

@@ -1,14 +1,16 @@
+#![allow(non_snake_case)]
+
 use serde::Deserialize;
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Default, Clone)]
 pub struct Options {
-    pub a: String,
-    pub b: String,
-    pub c: String,
-    pub d: String
+    pub A: String,
+    pub B: String,
+    pub C: String,
+    pub D: String
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Default, Clone)]
 pub struct Question {
     pub id: i64,
     pub question: String,
@@ -16,7 +18,7 @@ pub struct Question {
     pub answer: String
 }
  
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Default, Clone)]
 pub struct Config {
     pub questions: Vec<Question>
 }
