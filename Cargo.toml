@@ -18,3 +18,5 @@ serenity = { version = "0.11.5", default-features = false, features = [
 tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
 text_io = "0.1.12"
 diesel = { version = "2.1.0", features = ["postgres"] }
+serde_json = "1.0.103"
+chrono = "0.4.26"
