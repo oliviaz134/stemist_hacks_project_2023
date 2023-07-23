@@ -28,12 +28,7 @@ pub fn generate_question() -> Question {
     let rand_num = (random % (JSON_DATA.lock().unwrap().questions.len() + 1) as u32) as i64;
 
     for question in &JSON_DATA.lock().unwrap().questions {
-
-        println!("question id: {}", question.id);
-        println!("random question id: {} ", rand_num);
-
         if question.id == rand_num {
-            println!("question found");
             return question.clone();
         }
     }
