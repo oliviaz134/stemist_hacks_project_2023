@@ -22,6 +22,7 @@ impl EventHandler for Handler {
     async fn interaction_create(&self, ctx: Context, interaction: Interaction) {
         if let Interaction::ApplicationCommand(mut command) = interaction {
             let content = match command.data.name.as_str() {
+                "help" => commands::users::help::help(),
                 _ => "not implemented".to_string(),
             };
 
@@ -62,7 +63,11 @@ impl EventHandler for Handler {
     async fn ready(&self, ctx: Context, ready: Ready) {
         println!("{} is connected!", ready.user.name);
 
-        // let guild_command = Command::create_global_application_command(&ctx.http, |command| {}).await;
+        let guild_command = Command::create_global_application_command(&ctx.http, |command| {
+            commands::users::help::register(command)
+        }).await;
+
+        println!("CREATED: {:#?}", guild_command);
     }
 }
 
