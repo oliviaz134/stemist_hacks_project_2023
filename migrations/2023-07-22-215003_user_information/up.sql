@@ -4,3 +4,5 @@ CREATE TABLE user_information (
   username TEXT NOT NULL,
   points bigint NOT NULL
 );
+
+UPDATE user_information SET points = 0;

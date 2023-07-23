@@ -1,19 +1,33 @@
-use super::super::pq;
 use super::super::super::json_structs::parse;
+use super::super::pq;
 use once_cell::sync::Lazy;
 use std::sync::Mutex;
 
 static QUESTION_RESPONSE: Lazy<Mutex<std::collections::HashMap<i64, Vec<bool>>>> =
     Lazy::new(|| Mutex::new(std::collections::HashMap::new()));
 
-pub fn add_points(id: i64, amount_of_points: i64) {
+pub fn add_points(
+    response: serenity::model::application::interaction::message_component::MessageComponentInteraction,
+    amount_of_points: i64,
+) {
     let mut connection = pq::connect::establish_connection();
 
-    let mut user = pq::interface::get_user(&mut connection, id).unwrap();
+    let user_result =
+        pq::interface::get_user(&mut connection, response.clone().member.unwrap().user.id.0 as i64);
+
+    let mut user = if let Ok(user) = user_result {
+        user
+    } else {
+        pq::interface::insert_user(
+            &mut connection,
+            &(response.clone().member.unwrap().user.id.0 as i64),
+            response.clone().member.unwrap().user.name.as_str(),
+        )
+        .unwrap()
+    };
 
     user.points += amount_of_points;
-
-    pq::interface::user_update_points(&mut connection, id, user.points).unwrap_or_default();
+    pq::interface::user_update_points(&mut connection, response.clone().member.unwrap().user.id.0 as i64, user.points).unwrap_or_default();
 }
 
 pub fn initialize_question_response_first_time() {
@@ -28,16 +42,9 @@ pub fn initialize_question_response_first_time() {
             map.insert(user.user_id, vec![false; num_of_questions]);
         }
     }
-
-    // Serialize the map to a file
-    let serialized = serde_json::to_string(&map).unwrap();
-    let mut file = std::fs::File::create("./resources/answered_questions.json").unwrap();
-    file.write_all(serialized.as_bytes()).unwrap();
 }
 
-
-
-pub fn mark_question_answered_right(user_id : i64, _question_id : i64) {
+pub fn mark_question_answered_right(user_id: i64, _question_id: i64) {
     let mut map = QUESTION_RESPONSE.lock().unwrap();
 
     if map.contains_key(&user_id) {
@@ -46,4 +53,3 @@ pub fn mark_question_answered_right(user_id : i64, _question_id : i64) {
         map.insert(user_id, vec![true]);
     }
 }
-

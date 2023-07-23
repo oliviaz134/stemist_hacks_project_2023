@@ -110,7 +110,7 @@ impl EventHandler for Handler {
 
             if answered_correctly {
 
-                commands::leaderboard::points::add_points(response.user.id.into(), 1);
+                commands::leaderboard::points::add_points(response.clone(), 1);
                 
                 embed
                     .title("Correct Answer!")
