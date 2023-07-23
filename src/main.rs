@@ -6,11 +6,14 @@ use serenity::{
     async_trait,
 	prelude::*,
 	model::{
-        application::command::Command,
         application::interaction::{Interaction, InteractionResponseType},
 		gateway::Ready
     }
 };
+
+pub mod commands;
+pub mod models;
+pub mod schema;
 
 struct Handler;
 
@@ -59,7 +62,7 @@ impl EventHandler for Handler {
     async fn ready(&self, ctx: Context, ready: Ready) {
         println!("{} is connected!", ready.user.name);
 
-        let guild_command = Command::create_global_application_command(&ctx.http, |command| {}).await;
+        // let guild_command = Command::create_global_application_command(&ctx.http, |command| {}).await;
     }
 }
 
