@@ -6,7 +6,6 @@ use serenity::{
     async_trait,
 	prelude::*,
 	model::{
-        application::command::Command,
         application::interaction::{Interaction, InteractionResponseType},
 		gateway::Ready
     }

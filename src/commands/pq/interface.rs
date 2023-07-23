@@ -30,3 +30,13 @@ pub fn user_delete_row(
 pub fn user_delete_table(conn: &mut PgConnection) -> Result<usize, diesel::result::Error> {
     diesel::delete(user_information).execute(conn)
 }
+
+pub fn user_update_points(
+    conn: &mut PgConnection,
+    search: i64,
+    new_points: i64,
+) -> Result<usize, diesel::result::Error> {
+    diesel::update(user_information.filter(user_id.eq(search)))
+        .set(points.eq(new_points))
+        .execute(conn)
+}
