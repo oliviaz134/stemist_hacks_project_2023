@@ -19,6 +19,7 @@ use serenity::builder::CreateEmbed;
 pub mod commands;
 pub mod models;
 pub mod schema;
+pub mod json_structs;
 
 struct Handler;
 
