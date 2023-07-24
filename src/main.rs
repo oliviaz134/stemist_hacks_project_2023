@@ -34,6 +34,7 @@ impl EventHandler for Handler {
             let content = match command.data.name.as_str() {
                 "help" => commands::users::help::help(),
                 "ask_question" => commands::users::ask_question::ask_question(&mut command),
+                "whoami" => commands::users::userinfo::whoami(&mut command),
                 "leaderboard" => commands::leaderboard::leaderboard::leaderboard(&mut command),
                 _ => {
                     let mut embed = CreateEmbed::default();
@@ -109,9 +110,8 @@ impl EventHandler for Handler {
             );
 
             if answered_correctly {
-
                 commands::leaderboard::points::add_points(response.clone(), 1);
-                
+
                 embed
                     .title("Correct Answer!")
                     .description(format!("You selected: {}", response.data.custom_id))
@@ -153,6 +153,11 @@ impl EventHandler for Handler {
 
         let _ = Command::create_global_application_command(&ctx.http, |command| {
             commands::leaderboard::leaderboard::register(command)
+        })
+        .await;
+
+        let _ = Command::create_global_application_command(&ctx.http, |command| {
+            commands::users::userinfo::register(command)
         })
         .await;
     }
